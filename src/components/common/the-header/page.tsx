@@ -10,7 +10,7 @@ const TheHeader = (props: Props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className="bg-[#0E1A0D]">
-      <div className="px-4 py-[40px] mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1600px] md:px-24 lg:px-8">
+      <div className="px-4 py-[40px] mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1600px] md:px-24 lg:px-8" data-aos="fade-up">
         <div className="relative flex items-center justify-between">
           <Link
             href="/"
@@ -69,7 +69,7 @@ const TheHeader = (props: Props) => {
                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400 flex items-center gap-[10px]"
               >
                 Sản phẩm
-                <span className="bg-[#AD02C9] text-white text-xs font-medium me-2 px-1 py-2 rounded-[10px] dark:bg-blue-900 dark:text-blue-300">
+                <span className="bg-[#AD02C9] text-white text-xs font-medium me-2 px-2 py-1 rounded-[10px] dark:bg-blue-900 dark:text-blue-300">
                   NEW
                 </span>
               </Link>
@@ -87,11 +87,11 @@ const TheHeader = (props: Props) => {
             <li>
               <a
                 href="/"
-                aria-label="Product pricing"
-                title="Product pricing"
+                aria-label="Financial technology"
+                title="Financial technology"
                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
               >
-                Trung Tâm hỗ trợ
+                Công nghệ tài chính
               </a>
             </li>
             <li>
@@ -104,18 +104,28 @@ const TheHeader = (props: Props) => {
                 Về UPS
               </a>
             </li>
+            <li>
+              <a
+                href="/"
+                aria-label="Price list"
+                title="Price list"
+                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+              >
+                Bảng giá
+              </a>
+            </li>
           </ul>
           <ul className="items-center hidden space-x-8 lg:flex">
             <li>
               <a
                 href="/"
-                className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:outline-none"
+                className=""
                 aria-label="Mở tài khoản ngay"
                 title="Mở tài khoản ngay"
               >
-                <button className="flex items-center bg-[#02E56A] py-3 px-6 rounded-2xl text-[#014227] font-bold text-[18px] leading-normal">
+                <button className="btn active">
                   Mở tài khoản ngay
-                  <div className="relative w-6 h-6 ml-2">
+                  <div className="relative w-6 h-6">
                     <NextImg
                       src="/assets/icons/UPs.svg"
                       alt="Capi"

@@ -10,7 +10,11 @@ const MobileApp = (props: Props) => {
       <div className="bg-[#0F1B0E] mb-[180px] pt-[74px]">
         <div className="mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1600px] px-4 lg:px-20">
           <div className="px-[130px] grid grid-cols-2 ">
-            <div className="flex flex-col gap-8 mt-20">
+            <div
+              className="flex flex-col gap-8 mt-20"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <div className="flex flex-col gap-1">
                 <div className="relative w-[111px] h-[48px]">
                   <NextImg
@@ -34,7 +38,7 @@ const MobileApp = (props: Props) => {
                 đầu tư thông minh, dễ dàng, và thú vị.
               </p>
               <div className="flex items-center gap-3">
-                <div className="bg-[#111] flex items-center gap-[9px] p-[10px] pr-[50px] rounded-[9px]">
+                <div className="bg-[#111] flex items-center gap-[9px] p-[10px] pr-[50px] rounded-[9px] cursor-pointer">
                   <div className="relative w-6 h-6">
                     <NextImg
                       src="/assets/icons/google-play1.svg"
@@ -51,7 +55,7 @@ const MobileApp = (props: Props) => {
                     </span>
                   </div>
                 </div>
-                <div className="bg-[#111] flex items-center gap-[9px] p-[10px] pr-6 rounded-[9px]">
+                <div className="bg-[#111] flex items-center gap-[9px] p-[10px] pr-6 rounded-[9px] cursor-pointer">
                   <div className="relative w-6 h-6">
                     <NextImg
                       src="/assets/icons/apple-logo1.svg"
@@ -70,25 +74,17 @@ const MobileApp = (props: Props) => {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-[45px]">
-              <div className="relative w-[full] h-[826px]">
-                <NextImg
-                  src="/assets/icons/phone1.svg"
-                  alt="Capi"
-                  objectFit="cover"
-                  className="object-top"
-                />
-              </div>
-              <div className="content-end">
-                <div className="relative w-[full] h-[701px]">
-                  <NextImg
-                    src="/assets/icons/phone2.svg"
-                    alt="Capi"
-                    objectFit="cover"
-                    className="object-top"
-                  />
-                </div>
-              </div>
+            <div
+              className="relative w-[full] h-[830px]"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <NextImg
+                src="/assets/icons/phone-banner.svg"
+                alt="Capi"
+                objectFit="cover"
+                className="object-top"
+              />
             </div>
           </div>
         </div>

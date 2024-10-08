@@ -52,7 +52,7 @@ const Community = (props: Props) => {
               scale: 1,
               duration: 1.5,
               ease: "bounce.out",
-              stagger: 0.1,
+              stagger: 0.05,
             }
           );
           observer.disconnect(); // Stop observing after the animation
@@ -72,7 +72,11 @@ const Community = (props: Props) => {
   }, []);
   return (
     <>
-      <div className="flex flex-col text-center gap-2">
+      <div
+        className="flex flex-col text-center gap-2"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
         <div className="relative w-[111px] h-[48px] mx-auto">
           <NextImg
             src="/assets/icons/logo-small2.svg"
@@ -86,7 +90,7 @@ const Community = (props: Props) => {
           <span className="text-[#02E56A]">Nhà đầu tư UPS</span>
         </span>
         <div className="flex items-center gap-4 mx-auto mt-10">
-          <div className="flex items-center bg-[#002013] rounded-xl gap-3 w-[140px] h-10 pl-[14px]">
+          <div className="flex items-center bg-[#002013] rounded-xl gap-3 w-[140px] h-10 pl-[14px] cursor-pointer">
             <div className="relative w-[19px] h-[19px]">
               <NextImg
                 src="/assets/icons/logo-bt.svg"
@@ -99,7 +103,7 @@ const Community = (props: Props) => {
               Cộng đồng
             </span>
           </div>
-          <div className="flex items-center bg-[#002013] rounded-xl gap-3 w-[140px] h-10 pl-[14px]">
+          <div className="flex items-center bg-[#002013] rounded-xl gap-3 w-[140px] h-10 pl-[14px] cursor-pointer">
             <div className="relative w-[16px] h-[31px] place-items-end">
               <NextImg
                 src="/assets/icons/fb2.svg"
@@ -112,7 +116,7 @@ const Community = (props: Props) => {
               Facebook
             </span>
           </div>
-          <div className="flex items-center bg-[#002013] rounded-xl gap-3 w-[140px] h-10 pl-[14px]">
+          <div className="flex items-center bg-[#002013] rounded-xl gap-3 w-[140px] h-10 pl-[14px] cursor-pointer">
             <div className="relative w-[22px] h-[18px]">
               <NextImg
                 src="/assets/icons/Path-3.svg"
@@ -125,7 +129,7 @@ const Community = (props: Props) => {
               Telegram
             </span>
           </div>
-          <div className="flex items-center bg-[#002013] rounded-xl gap-3 w-[140px] h-10 pl-[14px]">
+          <div className="flex items-center bg-[#002013] rounded-xl gap-3 w-[140px] h-10 pl-[14px] cursor-pointer">
             <div className="relative w-[24px] h-[24px]">
               <NextImg
                 src="/assets/image/zalo.png"

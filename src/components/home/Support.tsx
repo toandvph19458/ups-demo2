@@ -3,29 +3,109 @@ import React, { useState } from "react";
 import NextImg from "../common/next-img";
 
 type Props = {};
-interface OpenItemsState {
-  item1: boolean;
-  item2: boolean;
-  item3: boolean;
-}
-const Support = (props: Props) => {
-  const [openItems, setOpenItems] = useState<OpenItemsState>({
-    item1: false,
-    item2: false,
-    item3: false,
-  });
+const QnAItems = [
+  {
+    id: 1,
+    question: `Tôi có thể mở tài khoản giao dịch tại UPS qua các hình thức
+										nào?`,
+    answer: `Để mở tài khoản giao dịch tại UPS, bạn có thể lựa chọn một
+											trong những cách sau đây: Cách 1: Mở tài khoản trực tuyến
+											qua website tại đây Cách 2: Mở tài khoản trực tiếp tại
+											quầy giao dịch của VPS. Để được hỗ trợ thêm, vui lòng liên
+											hệ hotline 0243.944.6666`,
+  },
+  {
+    id: 2,
+    question: `Phí giao dịch tại UPS?`,
+    answer: `Để mở tài khoản giao dịch tại UPS, bạn có thể lựa chọn một
+											trong những cách sau đây: Cách 1: Mở tài khoản trực tuyến
+											qua website tại đây Cách 2: Mở tài khoản trực tiếp tại
+											quầy giao dịch của VPS. Để được hỗ trợ thêm, vui lòng liên
+											hệ hotline 0243.944.6666`,
+  },
+  {
+    id: 3,
+    question: `Sự khác biệt của UPS?`,
+    answer: `Để mở tài khoản giao dịch tại UPS, bạn có thể lựa chọn một
+											trong những cách sau đây: Cách 1: Mở tài khoản trực tuyến
+											qua website tại đây Cách 2: Mở tài khoản trực tiếp tại
+											quầy giao dịch của VPS. Để được hỗ trợ thêm, vui lòng liên
+											hệ hotline 0243.944.6666`,
+  },
+];
+type AccordionItemProps = {
+  item: {
+    id: number;
+    question: string;
+    answer: string;
+  };
+  isOpen: boolean;
+  handleOnClick: () => void;
+};
 
-  const toggleAccordion = (item: keyof OpenItemsState) => {
-    setOpenItems((prev) => ({
-      ...prev,
-      [item]: !prev[item],
-    }));
+const AccordionItem = (props: AccordionItemProps) => {
+  const {
+    item: { id, question, answer },
+    isOpen,
+    handleOnClick,
+  } = props;
+  return (
+    <div key={id} className="flex gap-5 relative">
+      <div className="bg-[#F3F3FB] w-[50px] h-[50px] min-w-[50px] flex items-center justify-center rounded-[10px]">
+        <div className="relative w-[24px] h-[24px]">
+          <NextImg
+            src="/assets/icons/document-text.svg"
+            alt="Capi"
+            objectFit="cover"
+            className=""
+          />
+        </div>
+      </div>
+      <div className={`flex flex-col`}>
+        <span className="text-[#15171E] text-[30px] font-semibold leading-normal mr-8">
+          {question}
+        </span>
+        <div
+          className={`grid text-[#535662] text-[18px] font-medium leading-[28px] overflow-hidden 
+						transition-all duration-500 ease-in-out
+						${isOpen ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0 mt-0"} `}
+        >
+          <div className="overflow-hidden">{answer}</div>
+        </div>
+      </div>
+      <div className="absolute top-2 right-0">
+        <div
+          className={`relative w-[32px] h-[32px] cursor-pointer transform duration-300 ease-in-out ${
+            isOpen ? "" : "rotate-180"
+          }`}
+          onClick={handleOnClick}
+        >
+          <NextImg
+            src="/assets/icons/chevron-down.svg"
+            alt="Capi"
+            objectFit="cover"
+            className="w-full h-full"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Support = (props: Props) => {
+  const [openItemId, setOpenItemId] = useState(1);
+
+  const handleOpenItem = (item: any) => {
+    setOpenItemId(item.id);
+    if (item.id === openItemId) {
+      setOpenItemId(-1);
+    }
   };
   return (
     <>
       <div className="px-[160px] mt-[160px]">
         <div className="grid grid-cols-[600px,auto] gap-20">
-          <div>
+          <div data-aos="fade-up" data-aos-delay="200">
             <span className="text-[#111013] text-[48px] font-bold leading-[56px]">
               <span className="text-[#01C159]">Câu hỏi</span> thường gặp
             </span>
@@ -34,133 +114,17 @@ const Support = (props: Props) => {
               kiện của UPS
             </p>
             <div className="mt-[60px] flex flex-col gap-[70px]">
-              <div className="flex gap-5 relative">
-                <div className="bg-[#F3F3FB] w-[50px] h-[50px] min-w-[50px] flex items-center justify-center rounded-[10px]">
-                  <div className="relative w-[24px] h-[24px]">
-                    <NextImg
-                      src="/assets/icons/document-text.svg"
-                      alt="Capi"
-                      objectFit="cover"
-                      className=""
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col gap-4">
-                  <span className="text-[#15171E] text-[30px] font-semibold leading-normal mr-8">
-                    Tôi có thể mở tài khoản giao dịch tại UPS qua các hình thức
-                    nào?
-                  </span>
-                  {openItems.item1 && (
-                    <p className="text-[#535662] text-[18px] font-medium leading-[28px]">
-                      Để mở tài khoản giao dịch tại UPS, bạn có thể lựa chọn một
-                      trong những cách sau đây: Cách 1: Mở tài khoản trực tuyến
-                      qua website tại đây Cách 2: Mở tài khoản trực tiếp tại
-                      quầy giao dịch của VPS. Để được hỗ trợ thêm, vui lòng liên
-                      hệ hotline 0243.944.6666
-                    </p>
-                  )}
-                </div>
-                <div className="absolute top-2 right-0">
-                  <div
-                    className={`relative w-[32px] h-[32px] cursor-pointer transform duration-300 ease-in-out ${
-                      openItems.item1 ? "" : "rotate-180"
-                    }`}
-                    onClick={() => toggleAccordion("item1")}
-                  >
-                    <NextImg
-                      src="/assets/icons/chevron-down.svg"
-                      alt="Capi"
-                      objectFit="cover"
-                      className="w-full h-full"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-5 relative">
-                <div className="bg-[#F3F3FB] w-[50px] h-[50px] min-w-[50px] flex items-center justify-center rounded-[10px]">
-                  <div className="relative w-[24px] h-[24px]">
-                    <NextImg
-                      src="/assets/icons/document-text.svg"
-                      alt="Capi"
-                      objectFit="cover"
-                      className=""
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col gap-4">
-                  <span className="text-[#15171E] text-[30px] font-semibold leading-normal mr-8">
-                    Phí giao dịch tại UPS?
-                  </span>
-                  {openItems.item2 && (
-                    <p className="text-[#535662] text-[18px] font-medium leading-[28px]">
-                      Để mở tài khoản giao dịch tại UPS, bạn có thể lựa chọn một
-                      trong những cách sau đây: Cách 1: Mở tài khoản trực tuyến
-                      qua website tại đây Cách 2: Mở tài khoản trực tiếp tại
-                      quầy giao dịch của VPS. Để được hỗ trợ thêm, vui lòng liên
-                      hệ hotline 0243.944.6666
-                    </p>
-                  )}
-                </div>
-                <div className="absolute top-2 right-0">
-                  <div
-                    className={`relative w-[32px] h-[32px] cursor-pointer transform duration-300 ease-in-out ${
-                      openItems.item2 ? "" : "rotate-180"
-                    }`}
-                    onClick={() => toggleAccordion("item2")}
-                  >
-                    <NextImg
-                      src="/assets/icons/chevron-down.svg"
-                      alt="Capi"
-                      objectFit="cover"
-                      className="w-full h-full"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-5 relative">
-                <div className="bg-[#F3F3FB] w-[50px] h-[50px] min-w-[50px] flex items-center justify-center rounded-[10px]">
-                  <div className="relative w-[24px] h-[24px]">
-                    <NextImg
-                      src="/assets/icons/document-text.svg"
-                      alt="Capi"
-                      objectFit="cover"
-                      className=""
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col gap-4">
-                  <span className="text-[#15171E] text-[30px] font-semibold leading-normal mr-8">
-                    Sự khác biệt của UPS?
-                  </span>
-                  {openItems.item3 && (
-                    <p className="text-[#535662] text-[18px] font-medium leading-[28px]">
-                      Để mở tài khoản giao dịch tại UPS, bạn có thể lựa chọn một
-                      trong những cách sau đây: Cách 1: Mở tài khoản trực tuyến
-                      qua website tại đây Cách 2: Mở tài khoản trực tiếp tại
-                      quầy giao dịch của VPS. Để được hỗ trợ thêm, vui lòng liên
-                      hệ hotline 0243.944.6666
-                    </p>
-                  )}
-                </div>
-                <div className="absolute top-2 right-0">
-                  <div
-                    className={`relative w-[32px] h-[32px] cursor-pointer transform duration-300 ease-in-out ${
-                      openItems.item3 ? "" : "rotate-180"
-                    }`}
-                    onClick={() => toggleAccordion("item3")}
-                  >
-                    <NextImg
-                      src="/assets/icons/chevron-down.svg"
-                      alt="Capi"
-                      objectFit="cover"
-                      className="w-full h-full"
-                    />
-                  </div>
-                </div>
-              </div>
+              {QnAItems.map((item) => (
+                <AccordionItem
+                  key={item.id}
+                  item={item}
+                  isOpen={openItemId === item.id}
+                  handleOnClick={() => handleOpenItem(item)}
+                />
+              ))}
             </div>
           </div>
-          <div>
+          <div data-aos="fade-up" data-aos-delay="400">
             <div className="p-[60px] bg-[#F3F3FB] rounded-3xl">
               <div className="relative w-[324px] h-[350px]">
                 <NextImg
@@ -173,7 +137,7 @@ const Support = (props: Props) => {
               <p className="text-[#535662] text-[18px] font-semibold leading-[28px] mt-[52px] mb-[50px]">
                 Bạn chưa tìm thấy câu trả lời phù hợp? Đi tới trung tâm hỗ trợ
               </p>
-              <button className="flex items-center bg-[#014227] py-3 px-4 rounded-2xl text-[#02E56A] font-bold text-[18px] leading-normal w-[202px]">
+              <button className="flex items-center bg-[#014227] py-3 px-4 rounded-2xl text-[#02E56A] font-bold text-[18px] leading-normal w-[202px] hover:shadow-[-2px_3px_0px_0px_#00813B]">
                 Trung tâm hỗ trợ
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

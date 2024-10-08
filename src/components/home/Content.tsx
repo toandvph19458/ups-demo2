@@ -8,7 +8,11 @@ const Content = (props: Props) => {
       <div className="mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1600px] px-4 lg:px-20 mt-[160px]">
         {/* section 1 */}
         <div className="grid grid-cols-3 gap-[30px]">
-          <div className="bg-[url('/assets/image/bg-card.png')] w-full h-[534px] bg-cover bg-center rounded-3xl p-10 flex flex-col justify-between">
+          <div
+            className="bg-[url('/assets/image/bg-card.png')] w-full h-[534px] bg-cover bg-center rounded-3xl p-10 flex flex-col justify-between"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div className="flex flex-col gap-4">
               <span className="text-[#FFF] text-[40px] font-bold leading-[50px]">
                 Cộng đồng chất lượng của UPS
@@ -77,7 +81,11 @@ const Content = (props: Props) => {
               </div>
             </div>
           </div>
-          <div className="bg-[url('/assets/image/bg-card2.png')] w-full h-[534px] bg-cover bg-center rounded-3xl relative p-10">
+          <div
+            className="bg-[url('/assets/image/bg-card2.png')] w-full h-[534px] bg-cover bg-center rounded-3xl relative p-10"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             <span className="text-[#111013] text-[40px] font-bold leading-[50px] absolute bottom-20">
               Nền tảng ứng dụng di động mới
             </span>
@@ -85,7 +93,11 @@ const Content = (props: Props) => {
               Tải ngay nền tảng di động.
             </span>
           </div>
-          <div className="bg-[#00D763] p-10 rounded-3xl relative">
+          <div
+            className="bg-[#00D763] p-10 rounded-3xl relative"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
             <div className="bg-[#014227] w-20 h-20 flex items-center justify-center rounded-[20px]">
               <div className="relative w-6 h-6">
                 <NextImg
@@ -101,7 +113,7 @@ const Content = (props: Props) => {
             <span className="text-[#126240] text-[18px] font-medium leading-[28px]">
               Chính thức ra mắt dẫn lỗi hành trình đầu tư của bạn
             </span>
-            <button className="absolute bottom-10 flex items-center bg-[#FFF] py-3 px-6 rounded-2xl text-[#014227] font-bold text-[18px] leading-normal">
+            <button className="absolute bottom-10 flex items-center bg-[#FFF] py-3 px-6 rounded-2xl text-[#014227] font-bold text-[18px] leading-normal hover:shadow-[-2px_3px_0px_0px_#00813B]">
               Mở tài khoản ngay
               <div className="relative w-6 h-6 ml-2">
                 <NextImg
@@ -115,7 +127,11 @@ const Content = (props: Props) => {
         </div>
         {/*  section 2*/}
         <div className="grid grid-cols-2 gap-[30px] mt-[30px]">
-          <div className="bg-[url('/assets/image/bg-card3.png')] w-full h-[700px] bg-cover bg-center rounded-3xl pt-10 pl-10 relative">
+          <div
+            className="bg-[url('/assets/image/bg-card3.png')] w-full h-[700px] bg-cover bg-center rounded-3xl pt-10 pl-10 relative"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <span className="text-[#111013] text-[18px] leading-[28px] font-medium bg-[#02E56A] rounded-[10px] px-2 py-[2px]">
               Giao diện mới
             </span>
@@ -137,7 +153,11 @@ const Content = (props: Props) => {
               </div>
             </div>
           </div>
-          <div className="bg-[#F3F3FB] w-full h-[700px] bg-cover bg-center rounded-3xl relative pt-10 pl-10">
+          <div
+            className="bg-[#F3F3FB] w-full h-[700px] bg-cover bg-center rounded-3xl relative pt-10 pl-10"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             <span className="text-[#FFFFFF] text-[18px] leading-[28px] font-medium bg-[#FE3B1F] rounded-[10px] px-2 py-[2px]">
               Khuyến mãi
             </span>
@@ -170,7 +190,11 @@ const Content = (props: Props) => {
         </div>
         {/* section 3 */}
         <div className="grid grid-cols-3 gap-[30px] mt-[30px]">
-          <div className="bg-[#F3F3FB] w-full h-[534px] rounded-3xl p-10 relative">
+          <div
+            className="bg-[#F3F3FB] w-full h-[534px] rounded-3xl p-10 relative"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div className="flex flex-col gap-4">
               <span className="text-[#111013] text-[140px] font-bold leading-[140px]">
                 9
@@ -186,7 +210,11 @@ const Content = (props: Props) => {
               </div>
             </div>
           </div>
-          <div className="bg-[#F3F3FB] w-full h-[534px] rounded-3xl relative p-10">
+          <div
+            className="bg-[#F3F3FB] w-full h-[534px] rounded-3xl relative p-10"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             <div className="relative w-[384px] h-[290px] rounded-br-2xl">
               <NextImg
                 src="/assets/image/bieuphi.png"
@@ -204,7 +232,11 @@ const Content = (props: Props) => {
               </span>
             </div>
           </div>
-          <div className="bg-[url('/assets/image/Frame16.png')] w-full h-[534px] bg-cover bg-center rounded-3xl p-10">
+          <div
+            className="bg-[url('/assets/image/Frame16.png')] w-full h-[534px] bg-cover bg-center rounded-3xl p-10"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
             <div className="bg-[#FFF] w-20 h-20 flex items-center justify-center rounded-[20px]">
               <div className="relative w-6 h-6">
                 <NextImg

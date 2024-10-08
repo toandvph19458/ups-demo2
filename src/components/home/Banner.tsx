@@ -43,7 +43,7 @@ const userData: User[] = [
 const Banner = (props: Props) => {
   return (
     <>
-      <div className="flex justify-center ">
+      <div className="flex justify-center " data-aos="fade-up">
         <div className="flex flex-col justify-center items-center w-[800px] mx-auto">
           <i>
             <svg
@@ -67,9 +67,9 @@ const Banner = (props: Props) => {
             Chính thức ra mắt dẫn lối hành trình đầu tư của bạn
           </h1>
           <div className="flex items-center pt-[52px] gap-[20px]">
-            <button className="flex items-center bg-[#02E56A] py-3 px-6 rounded-2xl text-[#014227] font-bold text-[18px] leading-normal">
+            <button className="btn active">
               Mở tài khoản ngay
-              <div className="relative w-6 h-6 ml-2">
+              <div className="relative w-6 h-6">
                 <NextImg
                   src="/assets/icons/UPs.svg"
                   alt="Capi"
@@ -86,7 +86,7 @@ const Banner = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="flex items-center gap-9 mt-[70px] mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1600px] px-4 lg:px-20">
+      <div className="flex items-center gap-9 mt-[70px] mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1600px] px-4 lg:px-20" data-aos="fade-up">
         <div>
           <p className="text-[#FFF] text-xl font-medium w-[110px]">
             Top đầu tư của tuần
@@ -133,7 +133,7 @@ const Banner = (props: Props) => {
           ))}
         </Swiper>
       </div>
-      <div>
+      <div data-aos="fade-up">
         <MarqueeDemo />
       </div>
     </>

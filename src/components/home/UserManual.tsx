@@ -10,7 +10,11 @@ const UserManual = (props: Props) => {
       <div className="bg-[linear-gradient(180deg,#FFF_0%,#F3F3FB_100%)] py-[160px]">
         <div className="mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1600px] px-4 lg:px-20">
           <div className="px-[60px] py-[100px] grid grid-cols-[240px,420px,auto] gap-20 shadow-[0px_4px_54px_0px_rgba(0,0,0,0.05)] rounded-[32px] bg-[#FFF]">
-            <div className="flex flex-col">
+            <div
+              className="flex flex-col"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <div className="flex flex-col gap-1">
                 <span className="text-[#161519] text-[16px] font-medium leading-normal uppercase">
                   #HDSD
@@ -38,7 +42,7 @@ const UserManual = (props: Props) => {
                 Tìm kiểu thêm các hướng dẫn khác của{" "}
                 <span className="font-bold">UPS</span>
               </p>
-              <button className="flex items-center bg-[#014227] py-3 px-4 rounded-2xl text-[#02E56A] font-bold text-[18px] leading-normal w-[196px]">
+              <button className="flex items-center bg-[#014227] py-3 px-4 rounded-2xl text-[#02E56A] font-bold text-[18px] leading-normal w-[196px] hover:shadow-[-2px_3px_0px_0px_#00813B]">
                 Hướng dẫn khác
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +61,11 @@ const UserManual = (props: Props) => {
                 </svg>
               </button>
             </div>
-            <div className="flex flex-col gap-6">
+            <div
+              className="flex flex-col gap-6"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <div className="bg-[#0F1B0E] p-10 rounded-2xl h-[534px]">
                 <div className="relative w-[340px] h-[321px] rounded-br-2xl">
                   <NextImg
@@ -88,7 +96,7 @@ const UserManual = (props: Props) => {
               </div>
             </div>
 
-            <div>
+            <div data-aos="fade-up" data-aos-delay="600">
               <span className="text-[#111013] font-bold text-[30px] leading-normal">
                 Dễ dàng tham dự.
               </span>
