@@ -5,7 +5,7 @@ type Props = {};
 
 const ServiceTech = (props: Props) => {
   return (
-    <div className="mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1600px] px-4 lg:px-20 mt-[160px]">
+    <div className="mx-auto lg:max-w-[1400px]  mt-[160px]">
       <div className="bg-[#0D0344] rounded-[24px] grid grid-cols-[341px,auto] pl-[50px]">
         <div
           className="flex flex-col mb-[50px] place-self-end"
@@ -65,7 +65,7 @@ const ServiceTech = (props: Props) => {
             src="/assets/image/service-tech.png"
             alt="Capi"
             objectFit="cover"
-            className="rounded-br-3xl"
+            className="rounded-r-3xl"
           />
         </div>
       </div>
