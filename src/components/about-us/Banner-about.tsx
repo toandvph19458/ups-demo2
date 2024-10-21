@@ -1,13 +1,14 @@
+'use client'
 import React from "react";
 import NextImg from "../common/next-img";
-
+import { TypeAnimation } from 'react-type-animation';
 type Props = {};
 
 const BannerAbout = (props: Props) => {
   return (
     <>
       <div className="pt-[170px] pb-[70px] bg-[#00D763]">
-        <div className="flex items-center lg:max-w-[1440px] mx-auto relative h-[480px]">
+        <div className="flex items-center custom-container relative h-[480px]">
           <div
             className="absolute left-0 top-[-88px]"
             data-aos="fade-up"
@@ -34,13 +35,31 @@ const BannerAbout = (props: Props) => {
               <br />
               trong trải nghiệm
             </h1>
-            <h3 className="typing text-white text-right font-hanken-grotesk text-[100px] font-bold leading-[120px] tracking-[-2px]">
+            {/* <h3 className="typing text-white text-right font-hanken-grotesk text-[100px] font-bold leading-[120px] tracking-[-2px]">
               chứng khoán
-            </h3>
+            </h3> */}
+            <TypeAnimation
+            className="text-white text-right font-hanken-grotesk text-[100px] font-bold leading-[120px] tracking-[-2px]"
+              sequence={[
+                'chứng khoán', // Types 'One'
+                3000, // Waits 1s
+                'UPS', // Deletes 'One' and types 'Two'
+                3000, // Waits 2s
+                'upsecurities', // Types 'Three' without deleting 'Two'
+                3000,
+                () => {
+                  console.log('Sequence completed');
+                },
+              ]}
+              wrapper="span"
+              cursor={true}
+              repeat={Infinity}
+              style={{display: 'inline-block' }}
+            />
           </div>
         </div>
         <div
-          className="flex lg:max-w-[1440px] mx-auto items-end justify-between mt-[30px]"
+          className="flex custom-container items-end justify-between mt-[30px]"
           data-aos="fade-up"
           data-aos-delay="200"
         >
