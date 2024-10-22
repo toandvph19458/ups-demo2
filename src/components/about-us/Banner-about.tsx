@@ -51,7 +51,7 @@ const BannerAbout = (props: Props) => {
                   console.log('Sequence completed');
                 },
               ]}
-              wrapper="h3"
+              wrapper="span"
               cursor={true}
               repeat={Infinity}
               style={{display: 'inline-block' }}
