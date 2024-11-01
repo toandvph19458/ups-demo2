@@ -1,4 +1,4 @@
-import httpRequest from '~/utils/httpRequest';
+import httpRequest from '../utils/httpRequest';
 
 export const uploadFile = async (file: any) => {
 	const formData = new FormData();
