@@ -28,6 +28,7 @@ export default function RootLayout({
 			lang="en"
 			suppressHydrationWarning
 		>
+				<link rel="icon" href="/assets/logo/favicon.svg" sizes="any" />
 			<body>
 				<ThemeProvider
 					attribute="class"
@@ -35,7 +36,7 @@ export default function RootLayout({
 					enableSystem
 				>
 					<TheHeader/>
-					<div className="pt-10 md:pt-16 lg:pt-[70px]">
+					<div className="pt-12 md:pt-14 lg:pt-[70px]">
 					{children}
 					</div>
 					<TheFooter/>
