@@ -1,8 +1,8 @@
-"use client";
-import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { cn } from "@/lib/utils";
+'use client';
+import React, { useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { cn } from '@/lib/utils';
 
 type Props = {};
 
@@ -10,34 +10,34 @@ const SlideAbout = (props: Props) => {
   const swiperRef = useRef<any>(null);
   const slides = [
     {
-      tag: "Connection",
-      title: "Highly accessible",
+      tag: 'Connection',
+      title: 'Highly accessible',
       description:
-        "We track how people move through an impactful campaign that allows us to discover better others miss.",
+        'We track how people move through an impactful campaign that allows us to discover better others miss.',
     },
     {
-      tag: "Collaboration",
-      title: "Creative networking",
+      tag: 'Collaboration',
+      title: 'Creative networking',
       description:
-        "Creating a higher spacing and how people move through a unique and impactful campaign.",
+        'Creating a higher spacing and how people move through a unique and impactful campaign.',
     },
     {
-      tag: "Innovation",
-      title: "Ongoing optimization",
+      tag: 'Innovation',
+      title: 'Ongoing optimization',
       description:
-        "We track how people move through an impactful campaign that allows us to discover better others miss.",
+        'We track how people move through an impactful campaign that allows us to discover better others miss.',
     },
     {
-      tag: "Experience",
-      title: "Collaborative discovery",
+      tag: 'Experience',
+      title: 'Collaborative discovery',
       description:
-        "Spaces of each debt in the digital world can help you with overall simplest authentic.",
+        'Spaces of each debt in the digital world can help you with overall simplest authentic.',
     },
     {
-      tag: "Connection",
-      title: "Highly accessible",
+      tag: 'Connection',
+      title: 'Highly accessible',
       description:
-        "We track how people move through an impactful campaign that allows us to discover better others miss.",
+        'We track how people move through an impactful campaign that allows us to discover better others miss.',
     },
   ];
   return (
@@ -82,7 +82,7 @@ const SlideAbout = (props: Props) => {
             let angle = Math.atan2(mouseY, mouseX) * (180 / Math.PI);
             angle = (angle + 360) % 360;
 
-            cardRef.current.style.setProperty("--start", `${angle + 60}`);
+            cardRef.current.style.setProperty('--start', `${angle + 60}`);
           };
 
           const handleMouseEnter = () => {
@@ -93,36 +93,37 @@ const SlideAbout = (props: Props) => {
             setIsHovered(false);
           };
           return (
-            <SwiperSlide key={index} className={`${index === 0 ? 'ml-6 lg:ml-auto' : ''}`}>
+            <SwiperSlide
+              key={index}
+              className={`${index === 0 ? 'ml-6 lg:ml-auto' : ''}`}
+            >
               <div
                 ref={cardRef}
-                className={`card rounded-[12px] lg:rounded-[16px] p-5 lg:p-6 2xl:p-[32px] flex flex-col justify-between h-[320px] lg:h-[400px] 2xl:h-[430px] relative overflow-hidden bg-[#161519]`}
+                className={`card relative flex h-[320px] flex-col justify-between overflow-hidden rounded-[12px] bg-[#161519] p-5 lg:h-[400px] lg:rounded-[16px] lg:p-6 2xl:h-[430px] 2xl:p-[32px]`}
                 onMouseMove={handleMouseMove}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
                 <div className="flex flex-col gap-2">
-                  <span className="text-[#FFF] text-[14px] lg:text-base lg2:text-[18px] font-medium leading-[22px] lg:leading-[28px]">
+                  <span className="text-[14px] font-medium leading-[22px] text-[#FFF] lg:text-base lg:leading-[28px] lg2:text-[18px]">
                     {slide.tag}
                   </span>
-                  <h4 className="text-[#FFF] text-[20px] lg:text-[24px] lg2:text-[30px] 2xl:text-[32px] font-bold 3xl:leading-[40px]">
+                  <h4 className="text-[20px] font-bold text-[#FFF] lg:text-[24px] lg2:text-[30px] 2xl:text-[32px] 3xl:leading-[40px]">
                     {slide.title}
                   </h4>
                 </div>
-                <p className="text-[#FFF] text-[14px] lg:text-base lg2:text-[18px] font-medium leading-[22px] lg:leading-[28px]">
+                <p className="text-[14px] font-medium leading-[22px] text-[#FFF] lg:text-base lg:leading-[28px] lg2:text-[18px]">
                   {slide.description}
                 </p>
                 <div
                   className={cn(
-                    "absolute top-0 left-0 z-[99] w-[250px] h-[250px] rounded-full bg-green-500 opacity-50 pointer-events-none",
-                    { hidden: !isHovered }
+                    'pointer-events-none absolute left-0 top-0 z-[99] h-[250px] w-[250px] rounded-full bg-green-500 opacity-50',
+                    { hidden: !isHovered },
                   )}
                   style={{
-                    transform: `translate(${position.x - 120}px, ${
-                      position.y - 120
-                    }px)`,
+                    transform: `translate(${position.x - 120}px, ${position.y - 120}px)`,
                     background:
-                      "radial-gradient(circle, rgba(0,255,0,0.5) 0%, rgba(0,255,0,0) 70%)",
+                      'radial-gradient(circle, rgba(0,255,0,0.5) 0%, rgba(0,255,0,0) 70%)',
                   }}
                 ></div>
               </div>
@@ -131,13 +132,13 @@ const SlideAbout = (props: Props) => {
         })}
       </Swiper>
       <div
-        className="flex items-center gap-2 justify-end mt-6 lg:mt-10 custom-container"
+        className="custom-container mt-6 flex items-center justify-end gap-2 lg:mt-10"
         data-aos="fade-up"
         data-aos-delay="200"
       >
         <button
           id="prevBtn"
-          className="rounded-full bg-[#02E56A] hover:bg-[#15171E] w-[42px] h-[28px] flex justify-center items-center group"
+          className="group flex h-[28px] w-[42px] items-center justify-center rounded-full bg-[#02E56A] hover:bg-[#15171E]"
           onClick={() => swiperRef.current.swiper.slidePrev()}
         >
           <svg
@@ -157,7 +158,7 @@ const SlideAbout = (props: Props) => {
         </button>
         <button
           id="nextBtn"
-          className="rounded-full bg-[#02E56A] hover:bg-[#15171E] w-[42px] h-[28px] flex justify-center items-center group"
+          className="group flex h-[28px] w-[42px] items-center justify-center rounded-full bg-[#02E56A] hover:bg-[#15171E]"
           onClick={() => swiperRef.current.swiper.slideNext()}
         >
           <svg
