@@ -1,20 +1,23 @@
-import React from "react";
-import NextImg from "../common/next-img";
+'use client';
+import React from 'react';
+import NextImg from '../common/next-img';
 
-type Props = {};
+type Props = {
+  data: any;
+};
 
-const CourseBanner = (props: Props) => {
+const CourseBanner = ({ data }: Props) => {
   return (
     <div className="bg-[#FFECD2]">
       <div className="custom-container pb-6 pt-8 md:pb-0 md:pt-12 lg:pt-10 lg2:pt-16 2xl:pt-14 3xl:pt-6">
-        <div className="md:grid md:grid-cols-[auto,342px] md:gap-10 lg:grid-cols-[auto,380px] lg:items-center lg:gap-12 lg2:grid-cols-[auto,528px] lg2:items-stretch lg2:gap-[74px] 2xl:grid-cols-[auto,560px] 2xl:items-center 2xl:gap-[90px] 3xl:gap-[136px]">
+        <div className="md:grid md:grid-cols-[auto,342px] md:gap-10 lg:grid-cols-[auto,420px] lg:items-center lg:gap-12 lg2:grid-cols-[auto,528px] lg2:items-stretch lg2:gap-[74px] 2xl:grid-cols-[auto,560px] 2xl:items-center 2xl:gap-[90px] 3xl:gap-[136px]">
           <div
-            className="relative w-full pt-[85%] lg:h-[380px] lg2:h-[460px] 2xl:h-[560px] 3xl:h-[661px]"
+            className="relative w-full pt-[85%] md:h-[300px] lg:h-[380px] lg2:h-[460px] 2xl:h-[560px] 3xl:h-[661px]"
             data-aos="fade-up"
             data-aos-delay="200"
           >
             <NextImg
-              src="/assets/image/banner-course.svg"
+              src={process.env.REACT_APP_IMG_URL + data.cover}
               alt="Capi"
               objectFit="contain"
               className=""
@@ -26,16 +29,16 @@ const CourseBanner = (props: Props) => {
             data-aos-delay="600"
           >
             <span className="text-[14px] font-bold text-[#0C1C28] lg:text-base lg2:text-lg">
-              Chuỗi nội dung mới
+              {data.content.text}
             </span>
             <p className="text-[14px] text-[#0C1C28] lg:text-base lg2:text-lg">
-              Hà Nội, Việt Nam 20-23 tháng 11, 2024
+              {data.content.addres}
             </p>
             <h1 className="my-1 text-[32px] font-bold -tracking-[1.6px] text-[#0C1C28] lg:my-2 lg:text-[40px] lg2:text-[52px] 2xl:text-[60px] 3xl:text-[80px]">
-              UPS Academy
+              {data.title}
             </h1>
             <h3 className="text-[20px] font-bold text-[#0C1C28] md:w-[85%] lg:text-[24px] lg2:text-[32px] 2xl:w-full 2xl:text-[40px] 2xl:leading-[54px] 3xl:text-[48px] 3xl:leading-[56px]">
-              Trung tâm đào tạo và chia sẻ kiến thức
+              {data.sub_title}
             </h3>
             <div className="mt-6 grid grid-cols-3 gap-3 lg:gap-6 lg2:mt-20 2xl:mt-[94px] 2xl:gap-10">
               <div className="flex items-end bg-[#FF6D00] p-5 lg:p-6">
@@ -56,7 +59,7 @@ const CourseBanner = (props: Props) => {
               <div className="flex flex-col gap-2 border-t border-[#60606B] pt-3 lg:pt-4 lg2:pt-6">
                 <p>
                   <span className="text-[20px] font-bold leading-none tracking-[0.4px] text-[#0C1C28] lg:text-[24px] lg2:text-[40px]">
-                    95
+                    {data.total.video_count}
                   </span>
                   <span className="text-[20px] font-bold leading-none text-[#0C1C28] lg:text-[24px] lg2:text-[32px]">
                     +
@@ -69,7 +72,7 @@ const CourseBanner = (props: Props) => {
               <div className="flex flex-col gap-2 border-t border-[#60606B] pt-3 lg:pt-4 lg2:pt-6">
                 <p>
                   <span className="text-[20px] font-bold leading-none tracking-[0.4px] text-[#0C1C28] lg:text-[24px] lg2:text-[40px]">
-                    285
+                    {data.total.content_count}
                   </span>
                   <span className="text-[20px] font-bold leading-none text-[#0C1C28] lg:text-[24px] lg2:text-[32px]">
                     +
