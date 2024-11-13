@@ -1,14 +1,14 @@
-import NewsContent from '@/components/news/NewsContent';
-import React from 'react';
+import NewsContent from '@/components/news/NewsContent'
+import React from 'react'
 
-type Props = {};
+type Props = {}
 
 const NewsPage = (props: Props) => {
   return (
-    <div className="">
-      <NewsContent />
+    <div className='mt-16'>
+        <NewsContent/>
     </div>
-  );
-};
+  )
+}
 
-export default NewsPage;
+export default NewsPage
