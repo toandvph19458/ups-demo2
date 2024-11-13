@@ -2,7 +2,7 @@
 const nextConfig = {
     reactStrictMode: false,
     images: {
-        domains: ['cms.upse.vn',''],
+        domains: ['cms.upse.vn'],
         dangerouslyAllowSVG: true
     },
     env: {
