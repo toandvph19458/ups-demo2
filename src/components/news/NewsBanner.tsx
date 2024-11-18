@@ -2,14 +2,16 @@ import React from 'react';
 import NextImg from '../common/next-img';
 import Link from 'next/link';
 
-type Props = {};
+type Props = {
+  dataNew?: any;
+};
 
-const NewsBanner = (props: Props) => {
+const NewsBanner = ({ dataNew }: Props) => {
   return (
     <div className="custom-container 3xl:!max-w-[calc(1280px+48px)]">
-      <div className="mb-6 mt-[18px] flex flex-col-reverse md:grid md:grid-cols-[46%,auto] lg:mb-7 lg:mt-6 lg2:mt-7 xl:mb-8 2xl:mb-9 2xl:mt-8 3xl:mb-[52px] 3xl:mt-[60px]">
+      <div className="mt-[18px] flex flex-col-reverse md:grid md:grid-cols-[46%,auto] lg:mt-6 lg2:mt-7 2xl:mt-8 3xl:mt-[60px]">
         <div className="flex flex-col gap-2 rounded-b-[20px] rounded-tl-none bg-[#15171E] p-5 text-[#FFF] md:gap-3 md:rounded-l-[20px] md:rounded-br-none lg:gap-6 lg:px-[34px] lg:py-8 lg2:px-10 lg2:py-8 2xl:px-11 2xl:py-[34px] 3xl:gap-9 3xl:px-[50px] 3xl:py-11">
-          <div className="relative h-[32px] w-[73px] lg:h-[40px] lg:w-[92px] 2xl:h-[48px] 2xl:w-[111px]">
+          <div className="relative h-[26px] w-[60px] lg:h-[32px] lg:w-[73px] 2xl:h-[48px] 2xl:w-[111px]">
             <NextImg
               src="/assets/icons/Logo-small.svg"
               alt="Capi"
@@ -18,17 +20,17 @@ const NewsBanner = (props: Props) => {
             />
           </div>
           <div>
-            <p className="text-[18px] font-medium lg:text-[20px] lg2:text-[24px] lg2:leading-[40px] 2xl:text-[28px] 3xl:text-[32px]">
-              Ông Trump nói về lạm phát, chỉ trích bà Harris trong cuộc vận động
-              tranh cử ở Bắc Carolina
+            <p className="line-clamp-3 text-[18px] font-medium lg:text-[20px] lg2:text-[24px] lg2:leading-[40px] 2xl:text-[28px] 3xl:text-[32px]">
+              {dataNew?.short_content?.title}
             </p>
             <div className="my-2 h-[2px] w-[140px] bg-[#02E56A] md:my-3 lg:my-4 lg2:my-5 2xl:my-6"></div>
-            <p className="text-sm font-medium text-[#8C9AA4] lg:text-base">
-              Ông Trump nói về lạm phát, chỉ trích bà Harris trong cuộc vận động
-              tranh cử ở Bắc Carolina
+            <p className="line-clamp-3 text-sm font-medium text-[#8C9AA4] lg:text-base">
+              {dataNew?.short_content?.blurb}
             </p>
           </div>
-          <Link href={'/tin-tuc/chi-tiet-tin-tuc'}>
+          <Link
+            href={'/tin-tuc/chi-tiet-tin-tuc/' + dataNew?.short_content?.slug}
+          >
             <button className="flex items-center gap-2 text-sm font-bold lg:gap-3 lg:text-base">
               Xem chi tiết
               <i>
@@ -51,7 +53,9 @@ const NewsBanner = (props: Props) => {
         </div>
         <div className="relative h-[300px] w-full md:h-full">
           <NextImg
-            src="/assets/image/banner-news.jpg"
+            src={
+              process.env.REACT_APP_IMG_URL + dataNew?.short_content?.cover?.id
+            }
             alt="Capi"
             objectFit="cover"
             className="rounded-r-none rounded-t-[20px] md:rounded-r-[20px] md:rounded-tl-none"
