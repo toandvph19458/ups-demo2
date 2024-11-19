@@ -1,6 +1,8 @@
+'use client'
 import React from 'react';
 import NextImg from '../common/next-img';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 type Props = {};
 const news = [
@@ -102,6 +104,8 @@ const news = [
   },
 ];
 const NewsDetail = (props: Props) => {
+  const {slug} = useParams();
+
   return (
     <div>
       <section className="custom-container mt-16 3xl:!max-w-[calc(1280px+48px)]">
