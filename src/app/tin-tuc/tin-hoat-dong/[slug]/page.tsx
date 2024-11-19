@@ -26,12 +26,15 @@ export async function generateMetadata(
 
   const { slug } = params;
   const data = await fnGetNewDetail(slug);
+  const imageUrl =
+    process.env.REACT_APP_IMG_URL +
+    `${data?.data?.data?.posts_by_id?.raw_content?.cover?.id}`;
   return {
     title: data?.data?.data?.posts_by_id?.raw_content?.meta_title,
     description: data?.data?.data?.posts_by_id?.raw_content?.meta_description,
     keywords: data?.data?.data?.posts_by_id?.raw_content?.meta_keyword,
     openGraph: {
-      images: [`${data?.data?.data?.posts_by_id?.raw_content?.cover?.id}`],
+      images: [imageUrl],
     },
   };
 }
