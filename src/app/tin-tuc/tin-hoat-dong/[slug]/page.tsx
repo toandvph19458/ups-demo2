@@ -1,14 +1,38 @@
 import NewsDetail from '@/components/news/NewsDetail';
+import { fnGetNewDetail } from '@/services/news';
+import { Metadata, ResolvingMetadata } from 'next';
 import React from 'react';
 
-type Props = {};
+type Props = {
+  params: {
+    slug: string;
+  };
+};
 
-const ChiTietTinTucHd = (props: Props) => {
+const ChiTietTinTucHd = async ({ params }: Props) => {
+  const { slug } = params;
+  const data = await fnGetNewDetail(slug);
   return (
     <>
-      <NewsDetail />
+      <NewsDetail data={data?.data?.data?.posts_by_id?.raw_content} />
     </>
   );
 };
+export async function generateMetadata(
+  { params, searchParams }: any,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  // read route params
 
+  const { slug } = params;
+  const data = await fnGetNewDetail(slug);
+  return {
+    title: data?.data?.data?.posts_by_id?.raw_content?.meta_title,
+    description: data?.data?.data?.posts_by_id?.raw_content?.meta_description,
+    keywords: data?.data?.data?.posts_by_id?.raw_content?.meta_keyword,
+    openGraph: {
+      images: [`${data?.data?.data?.posts_by_id?.raw_content?.cover?.id}`],
+    },
+  };
+}
 export default ChiTietTinTucHd;
