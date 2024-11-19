@@ -18,7 +18,7 @@ const CongBoThongTin = async (props: Props) => {
       <InformationDisclosurePage    news={dataAnnounce?.data?.data?.announce}
         url="/tin-tuc/tin-dau-gia/"/>
     </div>
-  );
+  ); 
 };
 
 export default CongBoThongTin;
