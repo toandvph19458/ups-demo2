@@ -9,7 +9,7 @@ const Technology = ({ data }: Props) => {
   return (
     <div className="custom-container">
       <div className="mt-6 grid grid-rows-3 gap-3 md:grid-cols-3 md:grid-rows-none lg:mt-[30px] lg:gap-[30px]">
-        {data.map(({ item }: any, index: number) => {
+        {data?.map(({ item }: any, index: number) => {
           const delay = ((index % 3) + 1) * 200;
           return (
             <div
@@ -17,6 +17,7 @@ const Technology = ({ data }: Props) => {
               className="group flex flex-col items-center justify-center rounded-[12px] bg-[#F3F3FB] p-5 transition-all duration-500 ease-in-out hover:bg-[#4C35F5] lg:rounded-[16px] lg2:p-8 2xl:p-10"
               data-aos="fade-up"
               data-aos-delay={delay}
+               data-aos-duration="800"
             >
               <div className="relative mx-auto h-[160px] w-[160px] md:h-[120px] md:w-[120px] lg:h-[160px] lg:w-[160px] lg2:h-[180px] lg2:w-[180px]">
                 <NextImg

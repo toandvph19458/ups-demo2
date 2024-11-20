@@ -10,7 +10,7 @@ const CourseActicle = ({ data }: Props) => {
   return (
     <div className="mx-auto mt-10 md:max-w-[520px] lg:mt-[60px] lg:max-w-[700px] lg2:mt-20 lg2:max-w-[820px] xl:max-w-[900px] 2xl:max-w-[1024px]">
       <div className="grid grid-rows-3">
-        {data.question.map(({ item }: any, index: any) => {
+        {data?.question?.map(({ item }: any, index: any) => {
           const delay = ((index % 3) + 1) * 200;
           return (
             <a
@@ -21,6 +21,7 @@ const CourseActicle = ({ data }: Props) => {
               } `}
               data-aos="fade-up"
               data-aos-delay={delay}
+               data-aos-duration="800"
             >
               <div className="flex items-center gap-3 lg:gap-5">
                 <div className="relative h-[24px] w-[24px] min-w-6">
@@ -50,6 +51,7 @@ const CourseActicle = ({ data }: Props) => {
         className="btn active1 mx-auto mt-6 !bg-[#15171E] !text-[#FFF] lg:mt-[50px]"
         data-aos="fade-up"
         data-aos-delay="400"
+         data-aos-duration="800"
       >
         Xem tất cả bài viết
         <svg

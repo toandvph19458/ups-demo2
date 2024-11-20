@@ -8,7 +8,6 @@ type Props = {
 };
 
 const SlideHome = ({ data }: Props) => {
-  // console.log('🚀 ~ SlideHome ~ data:', data);
   const swiperRef = useRef<any>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -17,6 +16,7 @@ const SlideHome = ({ data }: Props) => {
       className="custom-container mt-6 md:mt-10 lg:mt-11 xl:mt-16 2xl:mt-20 3xl:mt-[120px]"
       data-aos="fade-up"
       data-aos-delay="200"
+       data-aos-duration="800"
     >
       <div className="relative rounded-[12px] lg:rounded-3xl">
         <Swiper

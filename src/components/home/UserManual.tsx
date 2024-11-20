@@ -9,7 +9,6 @@ type Props = {
 };
 
 const UserManual = ({ data }: Props) => {
-  // console.log('🚀 ~ UserManual ~ data:', data);
   const apps = [
     { id: 1, name: 'Nền tảng Website' },
     { id: 2, name: 'Nền tảng App Di động' },
@@ -66,6 +65,7 @@ const UserManual = ({ data }: Props) => {
               className="hidden flex-col gap-6 md:col-span-1 md:flex lg:col-span-3"
               data-aos="fade-up"
               data-aos-delay="400"
+               data-aos-duration="800"
             >
               <div className="rounded-2xl bg-[#0F1B0E] sm:p-5 lg2:p-8 2xl:p-10">
                 <div className="relative mx-auto w-full rounded-br-2xl sm:w-[calc(100%-64px)] md:h-[200px] lg:w-[calc(100%-48px)] lg2:h-[281px] lg2:w-full 3xl:h-[321px]">
@@ -99,6 +99,7 @@ const UserManual = ({ data }: Props) => {
             <div
               data-aos="fade-up"
               data-aos-delay="600"
+               data-aos-duration="800"
               className="md:col-span-2 lg:col-span-3"
             >
               <span className="hidden font-bold leading-normal text-[#111013] md:block md:text-[24px] lg2:text-[30px]">
@@ -165,6 +166,7 @@ const UserManual = ({ data }: Props) => {
               className="hidden flex-col gap-6 md:col-span-1 md:flex lg:col-span-3"
               data-aos="fade-up"
               data-aos-delay="400"
+               data-aos-duration="800"
             >
               <div className="rounded-2xl bg-[#0F1B0E] sm:p-5 lg2:p-8 2xl:p-10">
                 <div className="relative mx-auto w-full rounded-br-2xl sm:w-[calc(100%-64px)] md:h-[200px] lg:w-[calc(100%-48px)] lg2:h-[281px] lg2:w-full 3xl:h-[321px]">
@@ -198,6 +200,7 @@ const UserManual = ({ data }: Props) => {
             <div
               data-aos="fade-up"
               data-aos-delay="600"
+               data-aos-duration="800"
               className="md:col-span-2 lg:col-span-3"
             >
               <span className="hidden font-bold leading-normal text-[#111013] md:block md:text-[24px] lg2:text-[30px]">
@@ -264,6 +267,7 @@ const UserManual = ({ data }: Props) => {
               className="hidden flex-col gap-6 md:col-span-1 md:flex lg:col-span-3"
               data-aos="fade-up"
               data-aos-delay="400"
+               data-aos-duration="800"
             >
               <div className="rounded-2xl bg-[#0F1B0E] sm:p-5 lg2:p-8 2xl:p-10">
                 <div className="relative mx-auto w-full rounded-br-2xl sm:w-[calc(100%-64px)] md:h-[200px] lg:w-[calc(100%-48px)] lg2:h-[281px] lg2:w-full 3xl:h-[321px]">
@@ -297,6 +301,7 @@ const UserManual = ({ data }: Props) => {
             <div
               data-aos="fade-up"
               data-aos-delay="600"
+               data-aos-duration="800"
               className="md:col-span-2 lg:col-span-3"
             >
               <span className="hidden font-bold leading-normal text-[#111013] md:block md:text-[24px] lg2:text-[30px]">
@@ -363,6 +368,7 @@ const UserManual = ({ data }: Props) => {
               className="hidden flex-col gap-6 md:col-span-1 md:flex lg:col-span-3"
               data-aos="fade-up"
               data-aos-delay="400"
+               data-aos-duration="800"
             >
               <div className="rounded-2xl bg-[#0F1B0E] sm:p-5 lg2:p-8 2xl:p-10">
                 <div className="relative mx-auto w-full rounded-br-2xl sm:w-[calc(100%-64px)] md:h-[200px] lg:w-[calc(100%-48px)] lg2:h-[281px] lg2:w-full 3xl:h-[321px]">
@@ -396,6 +402,7 @@ const UserManual = ({ data }: Props) => {
             <div
               data-aos="fade-up"
               data-aos-delay="600"
+               data-aos-duration="800"
               className="md:col-span-2 lg:col-span-3"
             >
               <span className="hidden font-bold leading-normal text-[#111013] md:block md:text-[24px] lg2:text-[30px]">
@@ -468,6 +475,7 @@ const UserManual = ({ data }: Props) => {
               className="flex flex-col md:col-span-1 lg:col-span-2"
               data-aos="fade-up"
               data-aos-delay="200"
+               data-aos-duration="800"
             >
               <div className="flex flex-col gap-1">
                 <span className="text-sm font-medium uppercase leading-normal text-[#161519] md:text-[16px]">

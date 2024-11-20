@@ -48,7 +48,7 @@ const CourseSchedule = (props: Props) => {
       case 1:
         return (
           <div>
-            {contentData.map((item, index) => {
+            {contentData?.map((item, index) => {
               const delay = ((index % 3) + 1) * 200;
               return (
                 <div
@@ -60,6 +60,7 @@ const CourseSchedule = (props: Props) => {
                   } `}
                   data-aos="fade-up"
                   data-aos-delay={delay}
+                   data-aos-duration="800"
                 >
                   <div className="col-span-4 mb-6 flex items-center justify-between gap-4 md:mb-0 md:items-start">
                     <p className="text-sm font-bold leading-[27px] tracking-[0.328px] text-[#0C1C28] md:text-base">
@@ -157,7 +158,7 @@ const CourseSchedule = (props: Props) => {
       case 2:
         return (
           <div>
-            {contentData.map((item, index) => (
+            {contentData?.map((item, index) => (
               <div
                 key={index}
                 className={`w-full grid-cols-12 gap-10 border-[#60606B] border-opacity-65 py-5 lg:grid lg:py-6 ${
@@ -259,7 +260,7 @@ const CourseSchedule = (props: Props) => {
       case 3:
         return (
           <div>
-            {contentData.map((item, index) => (
+            {contentData?.map((item, index) => (
               <div
                 key={index}
                 className={`w-full grid-cols-12 gap-10 border-[#60606B] border-opacity-65 py-5 lg:grid lg:py-6 ${
@@ -361,7 +362,7 @@ const CourseSchedule = (props: Props) => {
       case 4:
         return (
           <div>
-            {contentData.map((item, index) => (
+            {contentData?.map((item, index) => (
               <div
                 key={index}
                 className={`w-full grid-cols-12 gap-10 border-[#60606B] border-opacity-65 py-5 lg:grid lg:py-6 ${
@@ -472,6 +473,7 @@ const CourseSchedule = (props: Props) => {
         onValueChange={handleScheduleClick}
         data-aos="fade-up"
         data-aos-delay="200"
+         data-aos-duration="800"
       >
         <div>
           <span className="text-[14px] font-medium leading-[22px] text-[#FF6D00] lg:text-[16px] lg:leading-[40px] lg2:text-[18px]">
