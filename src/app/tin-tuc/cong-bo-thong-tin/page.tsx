@@ -32,8 +32,8 @@ const CongBoThongTin = (props: Props) => {
         );
 
         setDataAnnounce([
-          ...dataAnnounceRes?.data?.data?.announce,
           ...dataAnnounce,
+          ...dataAnnounceRes?.data?.data?.announce,
         ]);
         setLength(dataAnnounceRes?.data?.data?.announce?.length);
       } catch (error) {
