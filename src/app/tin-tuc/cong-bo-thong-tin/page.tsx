@@ -17,7 +17,10 @@ const CongBoThongTin = (props: Props) => {
   const [dataAnnounce, setDataAnnounce] = useState<any>([]);
   const [dataCateAndTags, setDataCateAndTags] = useState<any>(null);
   const [length, setLength] = useState<any>();
+  const [sort, setSort] = useState<any>(true);
   useEffect(() => {
+    console.log(sort);
+    
     (async () => {
       try {
         const dataCateAndTags = await fnGetCateAndTags();
@@ -29,6 +32,27 @@ const CongBoThongTin = (props: Props) => {
           slugTag,
           date,
           keyword,
+          sort,
+        );
+
+        setDataAnnounce([...dataAnnounceRes?.data?.data?.announce]);
+        setLength(dataAnnounceRes?.data?.data?.announce?.length);
+      } catch (error) {
+        console.error('Error', error);
+      }
+    })();
+  }, [slugCate, slugTag, date, keyword, sort]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const dataAnnounceRes = await fnGetListAnnounce(
+          Number(currentPage),
+          12,
+          slugCate,
+          slugTag,
+          date,
+          keyword,
+          sort,
         );
 
         setDataAnnounce([
@@ -40,11 +64,13 @@ const CongBoThongTin = (props: Props) => {
         console.error('Error', error);
       }
     })();
-  }, [currentPage, slugCate, slugTag, date, keyword]);
+  }, [currentPage]);
   return (
     <div>
-      <HeaderNews />
-      {dataAnnounce.length != 0 && <NewsBanner dataNew={dataAnnounce[0]} />}
+      <HeaderNews setTextValue={setKeyword} setSort={setSort} />
+      {dataAnnounce.length != 0 && (
+        <NewsBanner dataNew={dataAnnounce[0]} url="cong-bo-thong-tin/" />
+      )}
       <NewsContentPage
         news={dataAnnounce}
         url="/tin-tuc/cong-bo-thong-tin/"
