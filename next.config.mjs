@@ -14,6 +14,7 @@ const nextConfig = {
     experimental: {
         scrollRestoration: true,
     },
+    swcMinify:true,
     compress: true,
 };
 
