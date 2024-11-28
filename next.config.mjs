@@ -16,7 +16,7 @@ const nextConfig = {
     },
     compiler: {
         styledComponents: true,
-      },
+    },
     swcMinify:true,
     compress: true,
 };
