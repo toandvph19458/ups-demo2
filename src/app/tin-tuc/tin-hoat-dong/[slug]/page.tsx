@@ -19,6 +19,7 @@ const ChiTietTinTucHd = async ({ params }: Props) => {
   );
   return (
     <>
+      
       <NewsDetail
         data={data?.data?.data?.posts_by_id?.raw_content}
         related={related?.data?.data?.posts}

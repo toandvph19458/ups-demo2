@@ -99,8 +99,7 @@ const TheFooter = (props: Props) => {
                 </div>
               </button>
               <p className="mt-6 hidden text-[16px] font-medium leading-[24px] text-[#6E767C] md:block">
-                Cảm ơn bạn đã tới với nền tảng giao dịch chứng khoán <br /> UP
-                Securities
+                Cảm ơn bạn đã tới với nền tảng giao dịch chứng khoán UP
               </p>
             </div>
           </div>
@@ -122,7 +121,6 @@ const TheFooter = (props: Props) => {
           >
             <Link
               href="/"
-              aria-label="Ups"
               title="Ups"
               className="inline-flex items-center"
             >
@@ -296,6 +294,9 @@ const TheFooter = (props: Props) => {
           <div className="mt-[14px] flex flex-col-reverse items-center gap-[14px] md:mt-0 md:flex-row lg:gap-6">
             <span className="text-sm font-medium leading-normal text-[rgba(255,255,255,0.79)]">
               Điều khoản & Quyền hạn
+            </span>
+            <span className="text-sm font-medium leading-normal text-[rgba(255,255,255,0.79)]">
+              Chính sách bảo mật
             </span>
             <span className="text-sm font-medium leading-normal text-[rgba(255,255,255,0.79)]">
               Trung tâm hỗ trợ khách hàng
