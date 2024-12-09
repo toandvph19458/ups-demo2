@@ -1,12 +1,21 @@
 'use client';
+
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import React, { useState } from 'react';
 import NextImg from '../next-img';
 
 type Props = {};
 
 const ButtonGetApp = (props: Props) => {
   const [isOpen, setOpen] = useState(true);
+  const [userAgent, setUserAgent] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setUserAgent(navigator.userAgent);
+    }
+  }, []);
+
   return (
     <div className={`block bg-[#EEF] shadow-md xl:hidden`}>
       {isOpen ? (
@@ -60,6 +69,11 @@ const ButtonGetApp = (props: Props) => {
               </button>
             </Link>
           </div>
+          {userAgent && (
+            <p className="mt-4 text-sm text-gray-500">
+              User Agent: {userAgent}
+            </p>
+          )}
         </div>
       ) : (
         ''
