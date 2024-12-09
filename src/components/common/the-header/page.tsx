@@ -6,13 +6,8 @@ import Link from 'next/link';
 import NextImg from '../next-img';
 import MenuMobile from '@/components/common/menu-mobile/page';
 import { usePathname } from 'next/navigation';
+import ButtonGetApp from '../btn-get-app/page';
 
-interface ListItemProps {
-  className?: string;
-  children: React.ReactNode;
-  title: string;
-  href: string;
-}
 const TheHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [bgColor, setBgColor] = useState('#0E1A0D');
@@ -66,14 +61,13 @@ const TheHeader = () => {
   return (
     <>
       <NavigationMenu.Root className="fixed z-[999] w-full">
+        {/* tải app */}
+        <ButtonGetApp />
+    
         <div className={bgColor + ` rounded-b-[24px]`}>
           <div className="mx-auto px-6 py-3 sm:max-w-full md:px-10 md:py-4 xl:max-w-[1280px] xl:px-0 xl:py-[20px] 2xl:max-w-[1440px] 3xl:max-w-[1600px]">
             <div className="relative flex items-center justify-between">
-              <Link
-                href="/"
-                title="Ups"
-                className="inline-flex items-center"
-              >
+              <Link href="/" title="Ups" className="inline-flex items-center">
                 <div className="relative h-[29px] w-[133px] rounded-br-2xl lg:h-[44px] lg:w-[184px]">
                   <NextImg
                     src="/assets/icons/logo-ups.svg"
@@ -83,17 +77,17 @@ const TheHeader = () => {
                   />
                 </div>
               </Link>
-              <NavigationMenu.List className="hidden items-center space-x-5 xl:flex 2xl:space-x-8">
+              <NavigationMenu.List className="ml-20 hidden items-center space-x-5 xl:flex 2xl:space-x-8">
                 <NavigationMenu.Item onMouseEnter={() => handleMouseEnter(0)}>
                   <NavigationMenu.Trigger>
                     <div className="flex items-center gap-[10px] text-base font-bold text-gray-100">
-                      Sản phẩm
+                      Sản phẩm - Dịch vụ
                       <span className="me-2 rounded-[10px] bg-[#AD02C9] px-2 py-1 text-sm font-bold uppercase text-white">
                         NEW
                       </span>
                     </div>
                   </NavigationMenu.Trigger>
-                  <NavigationMenu.Content className="absolute left-0 top-0 w-full data-[motion=from-end]:animate-enterFromRight data-[motion=from-start]:animate-enterFromLeft data-[motion=to-end]:animate-exitToRight data-[motion=to-start]:animate-exitToLeft sm:w-auto">
+                  <NavigationMenu.Content className="absolute left-0 top-0 w-full rounded-3xl sm:w-auto">
                     <div className="grid w-[690px] grid-cols-2 gap-10 px-6 py-5">
                       <ul className="flex flex-col gap-4">
                         <li>
@@ -101,7 +95,10 @@ const TheHeader = () => {
                             Khách hàng cá nhân
                           </h3>
                         </li>
-                        <Link href="/co-phieu" className="flex items-center gap-5">
+                        <Link
+                          href="/co-phieu"
+                          className="flex items-center gap-5"
+                        >
                           <div className="relative h-6 w-6">
                             <NextImg
                               src="/assets/icons/icon-nav1.svg"
@@ -146,7 +143,7 @@ const TheHeader = () => {
                           </p>
 
                           <div className="flex flex-col gap-5 py-5">
-                            <Link href="#" className="flex items-center">
+                            <Link href="/tu-van" className="flex items-center">
                               <div className="relative h-6 w-6">
                                 <NextImg
                                   src="/assets/icons/icon-nav6.svg"
@@ -157,10 +154,31 @@ const TheHeader = () => {
 
                               <div className="ml-5">
                                 <p className="text-base font-semibold text-[#000]">
-                                  Dịch vụ Ngân hàng đầu tư
+                                  Tư vấn tài chính
                                 </p>
                                 <p className="text-sm font-medium text-[rgba(0,0,0,0.68)]">
                                   Cùng doanh nghiệp phát triển bền vững
+                                </p>
+                              </div>
+                            </Link>
+                            <Link
+                              href="/nen-tang-cong-nghe"
+                              className="flex items-center"
+                            >
+                              <div className="relative h-6 w-6">
+                                <NextImg
+                                  src="/assets/icons/icon-nav8.svg"
+                                  alt="UPS"
+                                  objectFit="cover"
+                                />
+                              </div>
+
+                              <div className="ml-5">
+                                <p className="text-base font-semibold text-[#000]">
+                                  Nền tảng công nghệ
+                                </p>
+                                <p className="text-sm font-medium text-[rgba(0,0,0,0.68)]">
+                                  Vượt trội, nhanh chóng, dễ dàng
                                 </p>
                               </div>
                             </Link>
@@ -220,7 +238,7 @@ const TheHeader = () => {
                       Đầu tư cùng UPS
                     </Link>
                   </NavigationMenu.Trigger>
-                  <NavigationMenu.Content className="absolute left-0 top-0 w-full data-[motion=from-end]:animate-enterFromRight data-[motion=from-start]:animate-enterFromLeft data-[motion=to-end]:animate-exitToRight data-[motion=to-start]:animate-exitToLeft sm:w-auto">
+                  <NavigationMenu.Content className="absolute left-0 top-0 w-full rounded-3xl sm:w-auto">
                     <div className="flex w-[400px] flex-col gap-5 px-6 py-5">
                       <Link href="#" className="flex items-center">
                         <i className="inline-flex items-center justify-center">
@@ -336,32 +354,13 @@ const TheHeader = () => {
                 </NavigationMenu.Item>
 
                 <NavigationMenu.Item onMouseEnter={() => handleMouseEnter(2)}>
-                  <Link href="/nen-tang-cong-nghe">
-                    <div className="font-bold text-gray-100">
-                      Nền tảng công nghệ
-                    </div>
-                  </Link>
-                </NavigationMenu.Item>
-
-                <NavigationMenu.Item onMouseEnter={() => handleMouseEnter(3)}>
-                  <Link href="/tin-tuc">
-                    <div className="font-bold text-gray-100">
-                      Tin tức
-                      <span className="ml-[10px] rounded-full bg-[#E50261] px-2 py-1 text-sm">
-                        4
-                      </span>
-                    </div>
-                  </Link>
-                </NavigationMenu.Item>
-
-                <NavigationMenu.Item onMouseEnter={() => handleMouseEnter(4)}>
                   <NavigationMenu.Trigger>
                     <Link href="/gioi-thieu">
                       <div className="font-bold text-gray-100">Về UPS</div>
                     </Link>
                   </NavigationMenu.Trigger>
-                  <NavigationMenu.Content className="absolute left-0 top-0 w-full data-[motion=from-end]:animate-enterFromRight data-[motion=from-start]:animate-enterFromLeft data-[motion=to-end]:animate-exitToRight data-[motion=to-start]:animate-exitToLeft sm:w-auto">
-                    <div className="flex w-[400px] flex-col gap-5 px-6 py-5">
+                  <NavigationMenu.Content className="absolute left-0 top-0 w-full rounded-3xl sm:w-auto">
+                    <div className="flex w-[300px] flex-col gap-5 px-6 py-5">
                       <Link href="/gioi-thieu" className="flex items-center">
                         <i className="inline-flex items-center justify-center">
                           <svg
@@ -536,7 +535,7 @@ const TheHeader = () => {
                   </NavigationMenu.Content>
                 </NavigationMenu.Item>
 
-                <NavigationMenu.Item onMouseEnter={() => handleMouseEnter(5)}>
+                <NavigationMenu.Item onMouseEnter={() => handleMouseEnter(3)}>
                   <Link href="#">
                     <div className="font-bold text-gray-100">Bảng giá</div>
                   </Link>
@@ -616,7 +615,7 @@ const TheHeader = () => {
                 </div>
                 <li>
                   <Link
-                    href="/"
+                    href="https://onboarding.upstock.com.vn/index.html#/./open-account/check-info"
                     className=""
                     title="Mở tài khoản ngay"
                   >
@@ -636,7 +635,7 @@ const TheHeader = () => {
               <div className="xl:hidden">
                 <div className="flex items-center gap-4">
                   <Link
-                    href="/"
+                    href="https://onboarding.upstock.com.vn/index.html#/./open-account/check-info"
                     className="hidden md:block"
                     title="Mở tài khoản ngay"
                   >
@@ -725,23 +724,21 @@ const TheHeader = () => {
               className={cn(
                 'perspective-[1600px] absolute top-[59px] -translate-x-1/2',
                 {
-                  'left-[30%]': activeIndex === 0,
-                  'left-[38%]': activeIndex === 1,
-                  'left-[39%]': activeIndex === 2,
-                  'left-[63%]': activeIndex === 3,
-                  'left-[64%]': activeIndex === 4,
-                  'left-[65%]': activeIndex === 5,
+                  'left-[40%]': activeIndex === 0,
+                  'left-[50%]': activeIndex === 1,
+                  'left-[56%]': activeIndex === 2,
+                  'left-[57%]': activeIndex === 3,
                 },
               )}
             >
-              <NavigationMenu.Viewport className="relative mt-2.5 h-[var(--radix-navigation-menu-viewport-height)] w-full origin-[top_center] overflow-hidden rounded-[20px] bg-white transition-[width,_height] duration-300 data-[state=closed]:animate-scaleOut data-[state=open]:animate-scaleIn sm:w-[var(--radix-navigation-menu-viewport-width)]" />
+              <NavigationMenu.Viewport className="relative mt-2.5 h-[var(--radix-navigation-menu-viewport-height)] w-full origin-[top_center] overflow-hidden rounded-[20px] bg-white shadow-2xl transition-[width,_height] duration-300 data-[state=closed]:animate-scaleOut data-[state=open]:animate-scaleIn sm:w-[var(--radix-navigation-menu-viewport-width)]" />
             </div>
           </div>
         </div>
 
         {/* Mobile */}
         {isMenuOpen && (
-          <div className="fixed left-0 top-0 h-full w-full overflow-y-scroll bg-white">
+          <div className="fixed left-0 top-0 h-full w-full overflow-y-scroll">
             <div className="h-full w-full overflow-y-auto rounded border bg-[#0F1B0E] px-6 py-5">
               <div className="mb-4 flex items-center justify-between">
                 <div>
@@ -829,24 +826,5 @@ const TheHeader = () => {
     </>
   );
 };
-
-const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
-  ({ className, children, title, href, ...props }, forwardedRef) => (
-    <NavigationMenu.Link asChild>
-      <Link
-        className={cn(
-          'hover:bg-mauve3 block select-none rounded-md p-3 text-[15px] leading-none no-underline outline-none transition-colors',
-          className,
-        )}
-        href={href}
-        ref={forwardedRef}
-        {...props}
-      >
-        <div className="text-violet12 font-medium leading-[1.2]">{title}</div>
-        <p className="text-mauve11 leading-[1.4]">{children}</p>
-      </Link>
-    </NavigationMenu.Link>
-  ),
-);
 
 export default TheHeader;

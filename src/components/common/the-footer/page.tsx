@@ -87,7 +87,10 @@ const TheFooter = (props: Props) => {
                 </div>
               </div>
             </div>
-            <div className="mt-10 md:mt-0">
+            <Link
+              href={`https://onboarding.upstock.com.vn/index.html#/./open-account/check-info`}
+              className="mt-10 md:mt-0"
+            >
               <button className="btn active">
                 Mở tài khoản ngay
                 <div className="relative h-4 w-4 lg:h-6 lg:w-6">
@@ -101,7 +104,7 @@ const TheFooter = (props: Props) => {
               <p className="mt-6 hidden text-[16px] font-medium leading-[24px] text-[#6E767C] md:block">
                 Cảm ơn bạn đã tới với nền tảng giao dịch chứng khoán UP
               </p>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -119,11 +122,7 @@ const TheFooter = (props: Props) => {
             data-aos-delay="200"
             data-aos-duration="700"
           >
-            <Link
-              href="/"
-              title="Ups"
-              className="inline-flex items-center"
-            >
+            <Link href="/" title="Ups" className="inline-flex items-center">
               <div className="relative h-10 w-[167px] rounded-br-2xl lg:h-[44px] lg:w-[184px]">
                 <NextImg
                   src="/assets/icons/logo-ups.svg"
@@ -286,7 +285,7 @@ const TheFooter = (props: Props) => {
         </div>
       </div>
       <div className="bg-[#060B06]">
-        <div className="custom-container flex flex-col items-center justify-between py-5 md:flex-row xl:py-[30px]">
+        <div className="custom-container flex flex-col items-center justify-between py-5 lg:flex-row xl:py-[30px]">
           <p className="text-sm font-medium leading-normal text-[rgba(255,255,255,0.79)]">
             © 2024 <span className="text-[#02E56A]"> UP Securities</span>. All
             right reserved
