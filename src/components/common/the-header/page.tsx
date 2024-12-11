@@ -8,7 +8,11 @@ import MenuMobile from '@/components/common/menu-mobile/page';
 import { usePathname } from 'next/navigation';
 import ButtonGetApp from '../btn-get-app/page';
 
-const TheHeader = () => {
+interface TheHeaderProps {
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const TheHeader = ({ isOpen, setIsOpen }: TheHeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [bgColor, setBgColor] = useState('#0E1A0D');
   const [bgBtn, setbgBtn] = useState('#02E56A');
@@ -62,8 +66,8 @@ const TheHeader = () => {
     <>
       <NavigationMenu.Root className="fixed z-[999] w-full">
         {/* tải app */}
-        <ButtonGetApp />
-    
+        <ButtonGetApp isOpen={isOpen} setIsOpen={setIsOpen} />
+
         <div className={bgColor + ` rounded-b-[24px]`}>
           <div className="mx-auto px-6 py-3 sm:max-w-full md:px-10 md:py-4 xl:max-w-[1280px] xl:px-0 xl:py-[20px] 2xl:max-w-[1440px] 3xl:max-w-[1600px]">
             <div className="relative flex items-center justify-between">
@@ -182,28 +186,6 @@ const TheHeader = () => {
                                 </p>
                               </div>
                             </Link>
-
-                            <Link
-                              href="/tin-tuc/tin-dau-gia"
-                              className="flex items-center"
-                            >
-                              <div className="relative h-6 w-6">
-                                <NextImg
-                                  src="/assets/icons/icon-nav7.svg"
-                                  alt="UPS"
-                                  objectFit="cover"
-                                />
-                              </div>
-
-                              <div className="ml-5">
-                                <p className="text-base font-semibold text-[#000]">
-                                  Tin đấu giá
-                                </p>
-                                <p className="text-sm font-medium text-[rgba(0,0,0,0.68)]">
-                                  Bản tin đấu giá tại UPS
-                                </p>
-                              </div>
-                            </Link>
                           </div>
                           <div className="w-full">
                             <p className="text-left text-2xl font-semibold text-[#014227]">
@@ -240,7 +222,7 @@ const TheHeader = () => {
                   </NavigationMenu.Trigger>
                   <NavigationMenu.Content className="absolute left-0 top-0 w-full rounded-3xl sm:w-auto">
                     <div className="flex w-[400px] flex-col gap-5 px-6 py-5">
-                      <Link href="#" className="flex items-center">
+                      <Link href="/khoa-hoc" className="flex items-center">
                         <i className="inline-flex items-center justify-center">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -292,10 +274,10 @@ const TheHeader = () => {
 
                         <div className="ml-5">
                           <p className="text-base font-semibold text-[#000]">
-                            Nhận định thị trường
+                            Trung tâm đào tạo
                           </p>
                           <p className="text-sm font-medium text-[rgba(0,0,0,0.68)]">
-                            Báo cáo phân tích nhanh nhất cùng UPS
+                            {/* Báo cáo phân tích nhanh nhất cùng UPS */}
                           </p>
                         </div>
                       </Link>
@@ -724,9 +706,9 @@ const TheHeader = () => {
               className={cn(
                 'perspective-[1600px] absolute top-[59px] -translate-x-1/2',
                 {
-                  'left-[40%]': activeIndex === 0,
-                  'left-[50%]': activeIndex === 1,
-                  'left-[56%]': activeIndex === 2,
+                  'left-[38%] 3xl:left-[40%]': activeIndex === 0,
+                  'left-[51%] 2xl:left-[50%]': activeIndex === 1,
+                  'left-[59%] 2xl:left-[58%] 3xl:left-[56%]': activeIndex === 2,
                   'left-[57%]': activeIndex === 3,
                 },
               )}
