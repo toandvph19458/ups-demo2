@@ -13,6 +13,7 @@ const ButtonGetApp = ({ isOpen, setIsOpen }: ButtonGetAppProps) => {
     (() => {
       const userAgent =
         navigator.userAgent || (window as any).opera || navigator.vendor;
+      console.log(userAgent);
 
       // Kiểm tra hệ điều hành Android
       if (/android/i.test(userAgent)) {
