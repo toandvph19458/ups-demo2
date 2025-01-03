@@ -37,7 +37,8 @@ const ReviewCard = (item: any) => {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
-
+  console.log(item);
+  
   return (
     <div className="group/card relative">
       <figure
