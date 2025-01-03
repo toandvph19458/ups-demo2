@@ -137,7 +137,7 @@ const MarqueeDemo = ({ data, stocks }: Props) => {
     <div className="relative mt-[30px] flex h-auto w-full flex-col items-center justify-center overflow-hidden rounded-lg md:mt-10 md:shadow-xl lg:mt-8 lg2:mt-10 xl:mt-[52px] 2xl:mt-20 3xl:mt-[100px]">
       <Marquee
         pauseOnHover
-        className="pb-3 [--duration:80s] lg:pb-5 xl:pb-6"
+        className="pb-3 [--duration:90s] lg:pb-5 xl:pb-6"
         repeat={100}
       >
         {stocks?.map((item: any, index: number) => {
@@ -147,7 +147,7 @@ const MarqueeDemo = ({ data, stocks }: Props) => {
       <Marquee
         reverse
         pauseOnHover
-        className="!md:mb-10 mb-[22px] [--duration:80s] lg:mb-12 lg2:mb-8 xl:mb-[34px] 2xl:mb-11 3xl:mb-[54px]"
+        className="!md:mb-10 mb-[22px] [--duration:90s] lg:mb-12 lg2:mb-8 xl:mb-[34px] 2xl:mb-11 3xl:mb-[54px]"
         repeat={100}
       >
         {stocks?.map((item: any, index: number) => (
