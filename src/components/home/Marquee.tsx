@@ -130,7 +130,6 @@ const ReviewCard = (item: any) => {
 
 const MarqueeDemo = ({ data, stocks }: Props) => {
 
-
   const firstRow = stocks.slice(0, 14);
   const secondRow = stocks.slice(15, stocks.length);
 
