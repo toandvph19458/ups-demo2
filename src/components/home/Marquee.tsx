@@ -38,7 +38,6 @@ const ReviewCard = (item: any) => {
     setIsHovered(false);
   };
 
-  
   return (
     <div className="group/card relative">
       <figure
@@ -138,7 +137,7 @@ const MarqueeDemo = ({ data, stocks }: Props) => {
       <Marquee
         pauseOnHover
         className="pb-3 [--duration:110s] lg:pb-5 xl:pb-6"
-        repeat={100}
+        repeat={10}
       >
         {stocks?.map((item: any, index: number) => {
           return <ReviewCard key={index} {...item} />;
@@ -148,7 +147,7 @@ const MarqueeDemo = ({ data, stocks }: Props) => {
         reverse
         pauseOnHover
         className="!md:mb-10 mb-[22px] [--duration:110s] lg:mb-12 lg2:mb-8 xl:mb-[34px] 2xl:mb-11 3xl:mb-[54px]"
-        repeat={100}
+        repeat={10}
       >
         {stocks?.map((item: any, index: number) => (
           <ReviewCard key={index} {...item} />
